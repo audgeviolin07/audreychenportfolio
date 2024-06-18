@@ -10,6 +10,6 @@ app = Flask(__name__)
 def index():
     return render_template('index.html', title="MLH Fellow: Audrey", url=os.getenv("URL"))
 
-@app.route('/works')
+@app.route('/education')
 def works():
-    return render_template('works.html')
+    return render_template('education.html')

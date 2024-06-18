@@ -39,9 +39,10 @@
 
     <div class="div">
         <div class="div-2">
-            <a href="/works"><div class="div-3">Works</div></a>
-            <div class="div-4">Blog</div>
-            <div class="div-5">Contact</div>
+            <a href="/education" class="btn"><div class="div-3">Education</div></a>
+            <a href="/work-experience" class="btn"><div class="div-4">Work Experience</div></a>
+            <a href="/hobbies" class="btn"><div class="div-5">Hobbies</div></a>
+            <a href="/travel-map" class="btn"><div class="div-5">Travel Map</div></a>
         </div>
         <div class="div-6">
             <div class="div-7">
@@ -59,7 +60,7 @@
                         </div>
                     </div>
                     <div class="column-2">
-                        <img loading="lazy" src="./static/img/audrey.jpg" class="img" />
+                        <img loading="lazy" src="./static/img/abt.png" class="img" />
                     </div>
                 </div>
             </div>
@@ -95,19 +96,29 @@
                 white-space: initial;
             }
         }
-        .div-3 {
-            font-family: Heebo, sans-serif;
+        .btn {
+            display: inline-block;
+            background-color: #2E5E9F; /* Use the hex code of the color from the image */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
         }
-        .div-4 {
-            font-family: Heebo, sans-serif;
+
+        .btn:hover {
+            background-color: #1E4E7F; /* Darker shade for hover effect */
         }
-        .div-5 {
+        
+        .div-3, .div-4, .div-5 {
             font-family: Heebo, sans-serif;
         }
         .div-6 {
             align-self: center;
             display: flex;
-            margin-top: 158px;
+            margin-top: 40px;
             width: 100%;
             max-width: 856px;
             flex-direction: column;
