@@ -36,5 +36,228 @@
         </div>
         <h1>{{ title }}</h1>
     </div>
+
+    <div class="div">
+        <div class="div-2">
+            <div class="div-3">Works</div>
+            <div class="div-4">Blog</div>
+            <div class="div-5">Contact</div>
+        </div>
+        <div class="div-6">
+            <div class="div-7">
+                <div class="div-8">
+                    <div class="column">
+                        <div class="div-9">
+                            <div class="div-10">
+                                about me:
+                                <br />
+                                I'm a sussy baka
+                            </div>
+                            <div class="div-11">
+                                have you ever wondered what it'd be like to watch brainrot and attend 22 hackathons? that is me. i've inted my own life but at least maybe won a $50 gift card from one of those 17 hackathon wins.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column-2">
+                        <img loading="lazy" src="./static/img/audrey.jpg" class="img" />
+                    </div>
+                </div>
+            </div>
+            <div class="div-12">Download Resume</div>
+        </div>
+        <div class="div-13">
+            <div class="div-14">
+                <div class="div-15">Recent posts</div>
+                <div class="div-16">View all</div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .div {
+            display: flex;
+            flex-direction: column;
+        }
+        .div-2 {
+            align-self: end;
+            display: flex;
+            margin-right: 60px;
+            gap: 20px;
+            font-size: 20px;
+            color: #000;
+            font-weight: 1000;
+            white-space: nowrap;
+            text-align: right;
+            justify-content: space-between;
+        }
+        @media (max-width: 991px) {
+            .div-2 {
+                margin-right: 10px;
+                white-space: initial;
+            }
+        }
+        .div-3 {
+            font-family: Heebo, sans-serif;
+        }
+        .div-4 {
+            font-family: Heebo, sans-serif;
+        }
+        .div-5 {
+            font-family: Heebo, sans-serif;
+        }
+        .div-6 {
+            align-self: center;
+            display: flex;
+            margin-top: 158px;
+            width: 100%;
+            max-width: 856px;
+            flex-direction: column;
+        }
+        @media (max-width: 991px) {
+            .div-6 {
+                max-width: 100%;
+                margin-top: 40px;
+            }
+        }
+        .div-7 {
+        }
+        @media (max-width: 991px) {
+            .div-7 {
+                max-width: 100%;
+            }
+        }
+        .div-8 {
+            gap: 20px;
+            display: flex;
+        }
+        @media (max-width: 991px) {
+            .div-8 {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0px;
+            }
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+            line-height: normal;
+            width: 68%;
+            margin-left: 0px;
+        }
+        @media (max-width: 991px) {
+            .column {
+                width: 100%;
+            }
+        }
+        .div-9 {
+            display: flex;
+            flex-direction: column;
+            align-self: stretch;
+            color: var(--Dark-Color, #21243d);
+            margin: auto 0;
+            padding: 0 20px;
+        }
+        @media (max-width: 991px) {
+            .div-9 {
+                max-width: 100%;
+                margin-top: 40px;
+            }
+        }
+        .div-10 {
+            font: 700 44px/60px Heebo, sans-serif;
+        }
+        @media (max-width: 991px) {
+            .div-10 {
+                max-width: 100%;
+            }
+        }
+        .div-11 {
+            margin-top: 37px;
+            font: 400 16px Heebo, sans-serif;
+        }
+        @media (max-width: 991px) {
+            .div-11 {
+                max-width: 100%;
+            }
+        }
+        .column-2 {
+            display: flex;
+            flex-direction: column;
+            line-height: normal;
+            width: 32%;
+            margin-left: 20px;
+        }
+        @media (max-width: 991px) {
+            .column-2 {
+                width: 100%;
+            }
+        }
+        .img {
+            aspect-ratio: 0.97;
+            object-fit: auto;
+            object-position: center;
+            width: 100%;
+            border-radius: 50%;
+            flex-grow: 1;
+        }
+        @media (max-width: 991px) {
+            .img {
+                margin-top: 40px;
+            }
+        }
+        .div-12 {
+            border-radius: 2px;
+            background-color: var(--Primary, #ff6464);
+            align-self: start;
+            margin-top: 11px;
+            color: #fff;
+            justify-content: center;
+            padding: 16px 20px;
+            font: 500 20px Heebo, sans-serif;
+        }
+        .div-13 {
+            background-color: #edf7fa;
+            display: flex;
+            margin-top: 71px;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            font-weight: 400;
+            padding: 28px 60px 80px;
+        }
+        @media (max-width: 991px) {
+            .div-13 {
+                max-width: 100%;
+                margin-top: 40px;
+                padding: 0 20px;
+            }
+        }
+        .div-14 {
+            display: flex;
+            margin-bottom: 198px;
+            width: 100%;
+            max-width: 856px;
+            gap: 20px;
+        }
+        @media (max-width: 991px) {
+            .div-14 {
+                max-width: 100%;
+                flex-wrap: wrap;
+                margin-bottom: 40px;
+            }
+        }
+        .div-15 {
+            color: var(--Dark-Color, #21243d);
+            flex-grow: 1;
+            flex-basis: auto;
+            font: 22px/273% Heebo, sans-serif;
+        }
+        .div-16 {
+            color: var(--Secondry, #00a8cc);
+            text-align: right;
+            margin: auto 0;
+            font: 16px Heebo, sans-serif;
+        }
+    </style>
 </body>
+
 </html>
