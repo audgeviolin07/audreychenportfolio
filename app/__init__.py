@@ -9,3 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html', title="MLH Fellow: Audrey", url=os.getenv("URL"))
+
+@app.route('/works')
+def works():
+    return render_template('works.html')
