@@ -1,11 +1,13 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta property="og:title" content="Personal Portfolio">
-    <meta property="og:description" content="My Personal Portfolio">
-    <meta property="og:url" content="{{ url }}">
+    <meta property="og:title" content="Works">
+    <meta property="og:description" content="My Works">
+    <meta property="og:url" content="your-website-url-here">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -14,44 +16,30 @@
 
     <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
     <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
-    <title>{{ title }}</title>
+    <title>Works</title>
 </head>
-
-
-<html lang="en">
-    {# used jinja #}
 
 <body>
     <header class="nav-bar">
         <div class="nav-content">
             <a href="/">
                 <div class="nav-logo">
-                    <img src="./static/img/logo.svg" />
+                    <img src="./static/img/logo.svg" alt="Logo" />
                 </div>
             </a>
         </div>
     </header>
 
+    <div class="works">
+        <h1>My Works</h1>
+        <p>Here is a list of my works:</p>
+        <ul>
+            <li>Project 1: Description of project 1.</li>
+            <li>Project 2: Description of project 2.</li>
+            <li>Project 3: Description of project 3.</li>
+        </ul>
+    </div>
 
-    <html>
-        <body>
-            <ul id="navigation">
-                {% for item in navigation %}
-                    <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
-                {% endfor %}
-                </ul>
-            
-                <!-- base.html file -->
-                
-                <h1>My Webpage</h1>
-                {{ a_variable }}
-                
-        {% block content %} hi {% endblock %}
-        </body>
-    </html>
-
-
-    {# a comment #}
     <style>
         .works {
             margin: 20px;
@@ -91,4 +79,5 @@
         }
     </style>
 </body>
+
 </html>

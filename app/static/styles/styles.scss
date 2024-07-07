@@ -1,0 +1,144 @@
+@import compass
+
+$font-stack-safe: Helvetica, sans-serif
+$font-stack-main: "Roboto", $font-stack-safe
+$font-stack-highlight: "Roboto Condensed", $font-stack-safe
+
+$color-background: rgb(26, 26, 26)
+$color-highlight: rgb(175, 225, 250)
+$color-highlight-light: lighten($color-highlight, 10%)
+$color-highlight-dark: darken($color-highlight, 10%)
+
+$color-foreground: invert($color-background)
+  
+$map-dot-size: 40px
+
+$transition-time: 0.25s
+  
+html
+  background: $color-background
+  color: $color-foreground
+  text-align: center
+  font-family: $font-stack-main
+  
+body
+  max-width: 1200px
+  margin: 20px auto
+  padding: 0 100px
+  overflow-x: hidden
+
+.description
+  max-width: 600px
+  margin: 0 auto
+  color: transparentize($color-foreground, 0.3)
+  
+div, img, footer
+  position: relative
+  @include box-sizing(border-box)
+
+h1, h2, h3, h4, h5, h6
+  margin-bottom: 20px
+  text-transform: uppercase
+  font-family: $font-stack-highlight
+  font-weight: 300
+
+h1
+  font-size: 36pt
+
+h2
+  font-size: 24pt
+
+h3
+  font-size: 18pt
+
+h4
+  font-size: 16pt
+
+h5
+  font-size: 14pt
+
+h6
+  font-size: 12pt
+
+p
+  font-size: 12pt
+  margin-bottom: 12pt
+
+strong
+  font-weight: 900
+  font-family: $font-stack-highlight
+  color: $color-foreground
+    
+a
+  @include transition(color $transition-time ease-in-out)
+  font-family: $font-stack-highlight
+  text-transform: uppercase
+  text-decoration: none
+  color: $color-highlight-light
+  &:visited
+    color: $color-highlight-light
+  li.active &,
+  &:hover,
+  &:active
+    color: $color-foreground
+  
+.centered
+  position: absolute
+  top: 50%
+  left: 50%
+  @include translate(-50%, -50%)
+
+.centered-y
+  position: absolute
+  width: 100%
+  top: 50%
+  @include translateY(-50%)
+  
+.distribution-map
+  position: relative
+  width: 100%
+  padding: 20px
+  @include box-sizing(border-box)
+  margin: 0 auto
+  >img
+    width: 100%
+    position: relative
+    margin: 0
+    padding: 0
+  .map-point
+    cursor: pointer
+    outline: none
+    z-index: 0
+    position: absolute
+    width: $map-dot-size
+    height: $map-dot-size
+    @include border-radius($map-dot-size/2)
+    @include opacity(0.8)
+    @include translate(-50%, -50%)
+    @include transition(opacity $transition-time ease-in-out $transition-time, width $transition-time ease-in-out $transition-time, height $transition-time ease-in-out $transition-time, z-index $transition-time ease-in-out $transition-time)
+    background: transparentize($color-background, 0.15)
+    border: $map-dot-size/8 solid $color-highlight-dark
+    .content
+      @include opacity(0)
+      @include transition(opacity $transition-time ease-in-out)
+      width: 100%
+      height: 100%
+      left: 50%
+      @include translateX(-50%)
+      overflow: overlay
+    &:active, &:focus
+      //Deal with Firefox :active styling
+      margin: 0
+      padding: 0
+      @include opacity(1)
+      width: 300px
+      height: 220px
+      color: $color-foreground
+      z-index: 1
+      @include transition(opacity $transition-time ease-in-out, width $transition-time ease-in-out, height $transition-time ease-in-out)
+      .content
+        @include opacity(1)
+        @include transition(opacity $transition-time ease-in-out $transition-time, height 0 ease-in-out $transition-time, overflow 0 ease-in-out $transition-time)
+        overflow: hidden
+        a:hover, a:active
+          color: $color-highlight
