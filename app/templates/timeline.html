@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <form id="timelineForm">
+        <input type="text" id="name" name="name" placeholder="Name" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <textarea id="content" name="content" placeholder="What's on your mind?" required></textarea>
+        <button type="submit">Post</button>
+    </form>
+    <div id="posts">
+        {% for post in posts %}
+            <div class="post">
+                <p><strong>{{ post.name }}</strong> ({{ post.email }})</p>
+                <p>{{ post.content }}</p>
+                <p><em>{{ post.created_at }}</em></p>
+            </div>
+        {% endfor %}
+    </div>
+    <script>
+        document.getElementById('timelineForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const response = await fetch('/api/timeline_post', {
+                method: 'POST',
+                body: formData
+            });
+            const newPost = await response.json();
+            const postDiv = document.createElement('div');
+            postDiv.classList.add('post');
+            postDiv.innerHTML = `
+                <p><strong>${newPost.name}</strong> (${newPost.email})</p>
+                <p>${newPost.content}</p>
+                <p><em>${newPost.created_at}</em></p>
+            `;
+            document.getElementById('posts').prepend(postDiv);
+            event.target.reset();
+        });
+    </script>
+</body>
+</html>

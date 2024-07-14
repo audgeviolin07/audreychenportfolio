@@ -53,6 +53,11 @@ def hobbies():
 def travelmap():
     return render_template('travelmap.html')
 
+@app.route('/timeline')
+def timeline():
+    return render_template('timeline.html', title="Timeline")
+
+
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
     name = request.form['name']
@@ -69,6 +74,8 @@ def get_time_line_post():
             for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
         ]
     }
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
