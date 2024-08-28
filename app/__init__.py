@@ -8,30 +8,30 @@ from playhouse.shortcuts import model_to_dict
 load_dotenv()
 app = Flask(__name__)
 
-if os.getenv("TESTING") == "true":
-    print("Running in test mode")
-    mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
-else:
-    mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
-        user=os.getenv("MY_USER"),
-        password=os.getenv("MYSQL_PASSWORD"),
-        host=os.getenv("MYSQL_HOST"),
-        port=3306
-    )
+# if os.getenv("TESTING") == "true":
+#     print("Running in test mode")
+#     mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
+# else:
+#     mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+#         user=os.getenv("MY_USER"),
+#         password=os.getenv("MYSQL_PASSWORD"),
+#         host=os.getenv("MYSQL_HOST"),
+#         port=3306
+#     )
 
-print(mydb)
+# print(mydb)
 
-class TimelinePost(Model):
-    name = CharField()
-    email = CharField()
-    content = TextField()
-    created_at = DateTimeField(default=datetime.datetime.now)
+# class TimelinePost(Model):
+#     name = CharField()
+#     email = CharField()
+#     content = TextField()
+#     created_at = DateTimeField(default=datetime.datetime.now)
 
-    class Meta:
-        database = mydb
+#     class Meta:
+#         database = mydb
 
-mydb.connect()
-mydb.create_tables([TimelinePost])
+# mydb.connect()
+# mydb.create_tables([TimelinePost])
 
 @app.route('/')
 def index():
